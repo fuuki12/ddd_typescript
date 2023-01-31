@@ -1,0 +1,24 @@
+{
+  "name": "ddd_typescript",
+  "version": "1.0.0",
+  "description": "ddd_typescript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fuuki12/ddd_typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fuuki12/ddd_typescript/issues"
+  },
+  "homepage": "https://github.com/fuuki12/ddd_typescript#readme",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.5"
+  }
+}

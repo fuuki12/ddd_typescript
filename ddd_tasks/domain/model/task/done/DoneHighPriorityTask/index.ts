@@ -1,8 +1,13 @@
+import { createMock } from "ts-auto-mock";
+
 import { Priority } from "./Priority";
 import { Status } from "./Status";
 import { PostponeCount } from "./PostponeCount";
+import { DoneTask } from "../DoneTask";
+import { Task } from "../../Task";
+import { UndoneHighPriorityTask } from "../../undone/UndoneHighPriorityTask";
 
-export class DoneHighPriorityTask {
+export class DoneHighPriorityTask implements DoneTask {
   private readonly _id: number;
   private readonly _name: string;
   private readonly _priority: string;
@@ -23,6 +28,14 @@ export class DoneHighPriorityTask {
     return new DoneHighPriorityTask(id, name, priority, postponeCount, status);
   }
 
+  public get undone(): UndoneHighPriorityTask {
+    return UndoneHighPriorityTask.create(
+      this._id,
+      this._name,
+      this._postponeCount
+    );
+  }
+
   public get getId(): number {
     return this._id;
   }
@@ -41,6 +54,21 @@ export class DoneHighPriorityTask {
 
   public get getStatus(): string {
     return this._status;
+  }
+
+  public get changeHighPriority(): Task {
+    const dummy: Task = createMock<Task>();
+    return dummy;
+  }
+
+  public get changeMiddlePriority(): Task {
+    const dummy: Task = createMock<Task>();
+    return dummy;
+  }
+
+  public get changeLowPriority(): Task {
+    const dummy: Task = createMock<Task>();
+    return dummy;
   }
 
   private constructor(
